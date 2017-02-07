@@ -1,0 +1,100 @@
+<div class="topempty"></div>
+<div class="panel panel-default " >
+    <div class="alert alert-danger" role="alert" ng-if="bonusData.bonusPoint>0">{{dic.api.daybonus}}(+{{bonusData.bonusPoint}}Point / +{{bonusData.bonusCoins}}Coin ) </div>
+    <div class="panel-body">
+        <div class="panel panel-primary">
+            <div class="panel-heading">{{lang.home.introtitle}}</div>
+            <div class="panel-body">
+                <p>{{lang.home.intro}}</p>
+                <p>{{lang.home.introwish}}</p>
+                <p>{{lang.home.gameprogressex}}</p>
+                <ul>
+                    <li>{{lang.home.gameprogressex1}}</li>
+                    <li>{{lang.home.gameprogressex2}}</li>
+                    <li>{{lang.home.gameprogressex3}}</li>
+                </ul>
+
+                <p>{{lang.dic.gameType}}</p>
+                <ul>
+                    <li>{{lang.home.gameTabMemo}}</li>
+                    <li>{{lang.home.mysocialTabMemo}}</li>
+                </ul>
+
+
+                <p>{{lang.dic.gameRefer}}</p>
+                <ul>
+                    <li>{{lang.dic.handGameName}}</li>
+                    <li>{{lang.dic.iHoldemGameName}}</li>
+                    <li>{{lang.dic.etcGameName}}</li>
+                </ul>
+
+                <p>{{lang.home.bonusMemo1}}</p>
+                <ol>
+                    <li>{{lang.home.bonusMemo2}}</li>
+                </ol>
+                <p>{{lang.home.bonusMemo3}}
+                </p>
+                <ol>
+                    <li>{{lang.home.bonusMemo4}}</li>
+                    <li>{{lang.home.bonusMemo5}}</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">{{lang.dic.leaderBoard}}</div>
+            <div class="panel-body">
+                <p>{{handRank.currentMonth}} {{lang.home.handGameRank}}</p>
+                <ol>
+                    <li ng-repeat="rankinfo in handRank.list"><img class="user_medal_small" ng-src="{{rankinfo.picurl}}"  />{{rankinfo.nick}}({{rankinfo.earnPointTotal}}point)</li>
+                </ol>
+            </div>
+
+            <div class="panel-body">
+                <p>{{iholRank.currentMonth}} {{lang.home.iHGameRank}}</p>
+                <ol>
+                    <li ng-repeat="rankinfo in iholRank.list"><img class="user_medal_small" ng-src="{{rankinfo.picurl}}"  />{{rankinfo.nick}}({{rankinfo.earnPointTotal}}point)</li>
+                </ol>
+            </div>
+
+        </div>
+
+
+        <div class="panel panel-success">
+            <div class="panel-heading">가위바위보 게임 설명</div>
+            <div class="panel-body">
+
+                <h5>설명: 가위바위보게임은 누구나 알고있는 33.3333 승률을 가진 설명이 필요없는 가장 완벽한 밸런스 있는 게임입니다.
+                </h5>
+                <h5>게시자: 게시자는 게임->가위바위보게임->게임생성 에서 자신의 포인트를 걸고 새로운 게임을 만들수 있으며 묵/찌/빠 선택하여 게시하여, 도전자에게 이기면 포인트가 획득이됩니다.</h5>
+                <h5>도전자: 도전자는 게임->가위바위보게임->도전 에서 다른사람이 게시한 게임에 참여가 가능하며 묵/찌/빠로 게시자에게 도전가능합니다.</h5>
+                <h5>팁: 게시메시지및 도전메시지를 변경하여 게임에 영향을 줄수 있습니다. 예를 들면 '사나이는묵'이란 게시를하고 찌를 선택하거나 다른 패를 선택 하여 도전자에게 혼란을 유발할수 있습니다.
+                    또한 도전자는 '찌로 도전함' 이란 도전 메시지를 입력하여,실제는 빠를 내어 다음 사용자에게 혼란을 줄수 있습니다. 게시된 게임 하나가 모두 완료되면 묵찌빠 결과가 모두 표시가됩니다.  </h5>
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">인디언 홀덤 게임설명</div>
+            <div class="panel-body">
+
+                <h5>설명: 인디언 홀덤은 자신의 카드는 알지 못하며 , 이마에 붙은 상대편의 카드만 보고, 공통카드 2장과  자신의 카드 1장 조합으로 누가더 높은 카드가
+                    될지를 겨루는 승부입니다.
+                </h5>
+                <h5>게시자: 게시자는 게임->인디언홀덤->게임생성 에서 자신의 포인트를 걸고 새로운 게임을 만들수 있습니다. 게시자는 자신의 카드만 볼수 있으며, 도전자에게 이기면 포인트가 획득이됩니다. </h5>
+                <h5>도전자: 도전자는 게임->인디언홀덤->도전 에서 다른사람이 게시한 게임에 참여가 가능하며 도전자는 상대편카드를 볼수 있으며, 이길지 질지를 결정하여 승패를 반전시킬수 있습니다. </h5>
+                <h5>팁: 도전자는 게시자의 카드가 더 유리하다고 판단될시 , Fold 를 선택하여 게임결과 반전이 가능합니다. (자신의 카드가 이길시->패, 자신의 카드가 질때->승 )</h5>
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">{{lang.dic.reqAdward}}</div>
+            <div class="panel-body">
+                {{lang.dic.reqAdwardMemo}}
+                <p>{{lang.dic.reqAdwardAddr}}</p>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<img class="img-rounded" width="{{windowWidth}}px" src="/img/widelogo.jpg" />

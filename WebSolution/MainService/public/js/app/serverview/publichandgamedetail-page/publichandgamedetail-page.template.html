@@ -1,0 +1,181 @@
+<div class="topempty-game"></div>
+
+<div ng-if="isLogin==false" class="alert alert-success" role="alert" >
+    <p>{{lang.sHandGame.title}}</p>
+    <p>{{lang.sHandGame.gamehow1}}</p>
+    <p>{{lang.sHandGame.gamehow2}}</p>
+</div>
+
+<script type="text/ng-template"  id="tree_item_renderer_playgame.html">
+    <div class="panel-heading" ng-if="data.header">
+        <span class="glyphicon glyphicon glyphicon-user" ></span>
+        [{{data.header.gameID}}] {{data.header.memberNick_left}} {{lang.handGame.titie1}}:<strong>{{data.header.gameMoneyAmount}}</strong> {{lang.commGame.totalGame}}:{{data.header.gameCount}}
+        <div><img id="gamehandicon" ng-src="/img/avatar/default/avartar_01.png" /><strong>{{lang.commGame.reqmsg}}:{{data.header.gameMemo_left}}</strong></div>
+        <p ng-if="doneGame==false"><button ng-if="data.header.isJoinGame" type="button" class="btn btn-primary" ng-click="JoinGame(data.header.gameID)">{{lang.dic.req}}</button></p>
+
+    </div>
+    <div ng-if="data.gameID" ng-init="avatarNO=leadingZeros(data.subGameID+2,2)" >
+        <div>
+            <img id="gamehandicon" ng-src="/img/avatar/default/avartar_{{avatarNO}}.png" />
+            <div style="display: inline;">
+                {{data.memberNick_right}}
+            </div>
+            <div style="border: 1px solid red;border-radius: 5px;width: 250px;margin-left: 60px;padding: 10px;">
+                <div ng-if="data.memberID_right==data.winnerID" class="wincircle" >
+                    {{lang.dic_s.win}}
+                </div>
+
+                <div ng-if="data.memberID_left==data.winnerID" class="losecircle" >
+                    {{lang.dic_s.lose}}
+                </div>
+
+                <div ng-if="data.winnerID==0" class="samecircle" >
+                    {{lang.dic_s.nowin}}
+                </div>
+
+                <div >
+                    {{data.gameMemo_right}}
+                </div>
+
+                <div  id="layoutleft" ng-switch="" on={{data.gameFlag_right1}}>
+                    <div ng-switch-when="0">
+                        <img style="border: 2px solid red;border-radius: 5px;" id="gamehandicon" src="/img/game/lefthand_0.png" />
+                    </div>
+                    <div ng-switch-when="1">
+                        <img style="border: 2px solid red;border-radius: 5px;" id="gamehandicon" src="/img/game/lefthand_1.png" />
+                    </div>
+                    <div ng-switch-when="2">
+                        <img style="border: 2px solid red;border-radius: 5px;" id="gamehandicon" src="/img/game/lefthand_2.png" />
+                    </div>
+                </div>
+
+                <div id="layoutleftXX" ng-switch="" on={{data.gameFlag_left1}}>
+                    <div ng-switch-when="0">
+                        <img id="gamehandicon" src="/img/game/righthand_0.png" />
+                    </div>
+                    <div ng-switch-when="1">
+                        <img id="gamehandicon" src="/img/game/righthand_1.png" />
+                    </div>
+                    <div ng-switch-when="2">
+                        <img id="gamehandicon" src="/img/game/righthand_2.png" />
+                    </div>
+                </div>
+
+                <div ng-if="data.memberID_right==data.winnerID">
+                    +{{data.earnPoint}}Point
+                </div>
+
+                <div ng-if="data.memberID_left==data.winnerID">
+                    -{{data.earnPoint}}Point
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--div><button ng-if="data.isJoinGame" type="button" class="btn btn-primary" ng-click="JoinGame(data.gameID)">도전</button></div-->
+    <div class="panel-body"  ng-repeat="data in data.list" ng-include="'tree_item_renderer_playgame.html'"></div>
+</script>
+
+
+<div class="panel panel-info" ng-if="isEndGame==false">
+    <div class="panel-heading">
+        {{lang.sHandGame.gamehow3}}
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-info" ng-repeat="data in $ctrl.PlayGameList" ng-include="'tree_item_renderer_playgame.html'">{{data.header.gameID}}</div>
+    </div>
+</div>
+
+<div class="panel panel-default" ng-if="isEndGame==true">
+    <div class="panel-heading" >
+        {{lang.sHandGame.gamehow4}}
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-default" ng-repeat="data in $ctrl.PlayCompleteList" ng-include="'tree_item_renderer_playgame.html'">{{data.header.gameID}}</div>
+    </div>
+</div>
+
+<a href="/{{lang.langcode}}"><img class="img-rounded" width="{{windowWidth}}px" src="/img/widelogo.jpg" /></a>
+
+
+<div id="popup-container" ng-if="isShowDodal">
+    <div id="exampleModal" class="reveal-modal">
+        <div class="alert alert-danger" role="alert" ng-if="errorvisibility"> {{$ctrl.errmsg}} </div>
+        <div ng-switch="" on="dlgType">
+            <!-- JoinGame -->
+            <div ng-switch-when=2>
+                <div class="alert alert-success" role="alert" >{{lang.sHandGame.gamehow5}}
+                    <p>{{lang.sHandGame.gamehow6}}</p>
+                    <ol>
+                        <li>{{lang.sHandGame.gamehow7}}</li>
+                        <li>{{lang.sHandGame.gamehow8}}</li>
+                        <li>{{lang.sHandGame.gamehow9}}</li>
+                        <li>{{lang.sHandGame.gamehow10}}</li>
+                    </ol>
+                </div>
+                <form name="form">
+                    <div class="form-group">
+                        <label>
+                            <input type="radio" ng-model="rhand.name" value="0" checked="checked"/>
+                            <img id="gamehandicon" src="/img/game/lefthand_0.png"/>
+                        </label>
+                        <label>
+                            <input type="radio" ng-model="rhand.name" value="1" >
+                            <img id="gamehandicon" src="/img/game/lefthand_1.png"/>
+                        </label>
+                        <label>
+                            <input type="radio" ng-model="rhand.name" value="2"/>
+                            <img id="gamehandicon" src="/img/game/lefthand_2.png"/>
+                        </label>
+                    </div>
+
+                    <div class="form-group" >
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">{{lang.dic.ch_nickname}}</span>
+                            <input name='gamememo1' type="text" class="form-control" placeholder="{{lang.api.required}}" aria-describedby="basic-addon1" ng-model="playNick" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">{{lang.commGame.vsmsg}}</span>
+                            <input name='gamememo2' type="text" class="form-control" placeholder="{{lang.api.required}}" aria-describedby="basic-addon1" ng-model="gamememo2" required>
+                        </div>
+                    </div>
+
+                    <div id="footfix">
+                        <button ng-disabled="doneGame==true || form.$valid==false" type="button" class="btn btn-primary" ng-click="CloseDlg(this)">{{lang.dic.progressGame}}</button>
+                        <button type="button" class="btn btn-primary" ng-click="CancelDlg()">{{lang.dic.close}}</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div ng-if="resultShow" id="gameResult" ng-if="resultShow">
+            <div id="layoutleft" ng-switch="" on={{resultRight}}>
+                <div ng-switch-when="0">
+                    <img id="gamehandicon" src="/img/game/lefthand_0.png" />
+                </div>
+                <div ng-switch-when="1">
+                    <img id="gamehandicon" src="/img/game/lefthand_1.png" />
+                </div>
+                <div ng-switch-when="2">
+                    <img id="gamehandicon" src="/img/game/lefthand_2.png" />
+                </div>
+            </div>
+
+            <div id="layoutleft" ng-switch="" on={{resultLeft}}>
+                <div ng-switch-when="0">
+                    <img id="gamehandicon" src="/img/game/righthand_0.png" />
+                </div>
+                <div ng-switch-when="1">
+                    <img id="gamehandicon" src="/img/game/righthand_1.png" />
+                </div>
+                <div ng-switch-when="2">
+                    <img id="gamehandicon" src="/img/game/righthand_2.png" />
+                </div>
+            </div>
+                <div class="alert alert-danger" role="alert" >{{resultMsg}}</div>
+            </div>
+        </div>
+    </div>
+</div>

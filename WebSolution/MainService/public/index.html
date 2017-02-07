@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+    <meta charset="utf-8">
+    <title>WebNori WebGame</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <!-- PhoneGap -->
+    <script src="cordova.js"></script>
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/js/lib/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="/js/lib/bootstrap-3.3.7/css/bootstrap-theme.css">
+
+    <!-- App Css -->
+    <link rel="stylesheet" href="/css/AppStyle.css">
+
+    <!-- FaceBook -->
+
+    <!-- encripts -->
+    <script src="/js/lib/cryptojs/components/core.js"></script>
+    <script src="/js/lib/cryptojs/components/lib-typedarrays.js"></script>
+    <script src="/js/lib/cryptojs/components/x64-core.js"></script>
+    <script src="/js/lib/cryptojs/components/enc-utf16.js"></script>
+    <script src="/js/lib/cryptojs/components/enc-base64.js"></script>
+    <script src="/js/lib/cryptojs/components/md5.js"></script>
+    <script src="/js/lib/cryptojs/components/sha1.js"></script>
+    <script src="/js/lib/cryptojs/components/sha256.js"></script>
+    <script src="/js/lib/cryptojs/components/sha224.js"></script>
+    <script src="/js/lib/cryptojs/components/sha512.js"></script>
+    <script src="/js/lib/cryptojs/components/sha384.js"></script>
+    <script src="/js/lib/cryptojs/components/ripemd160.js"></script>
+    <script src="/js/lib/cryptojs/components/hmac.js"></script>
+    <script src="/js/lib/cryptojs/components/pbkdf2.js"></script>
+    <script src="/js/lib/cryptojs/components/evpkdf.js"></script>
+    <script src="/js/lib/cryptojs/components/cipher-core.js"></script>
+    <script src="/js/lib/cryptojs/components/mode-cfb.js"></script>
+    <script src="/js/lib/cryptojs/components/mode-ctr.js"></script>
+    <script src="/js/lib/cryptojs/components/mode-ofb.js"></script>
+    <script src="/js/lib/cryptojs/components/mode-ecb.js"></script>
+    <script src="/js/lib/cryptojs/components/pad-ansix923.js"></script>
+    <script src="/js/lib/cryptojs/components/pad-iso10126.js"></script>
+    <script src="/js/lib/cryptojs/components/pad-zeropadding.js"></script>
+    <script src="/js/lib/cryptojs/components/pad-iso97971.js"></script>
+    <script src="/js/lib/cryptojs/components/pad-nopadding.js"></script>
+    <script src="/js/lib/cryptojs/components/rc4.js"></script>
+    <script src="/js/lib/cryptojs/components/rabbit.js"></script>
+    <script src="/js/lib/cryptojs/components/aes.js"></script>
+    <script src="/js/lib/cryptojs/components/tripledes.js"></script>
+
+    <!-- jquery -->
+    <script type="text/javascript" src="/js/lib/jquerymobi/jquery.js"></script>
+
+    <!-- LangFile -->
+    <script type="text/javascript" src="@Model.langfile"></script>
+
+    <!-- Cocos 2d -->
+    <script type="text/javascript" src="/js/lib/cocos/cocos2d-beta2.min.js"></script>
+    <script type="text/javascript" src="/js/lib/cocos/pscoco.js"></script>
+
+    <!-- angular js -->
+    <script type="text/javascript" src="/js/lib/angular-1.5.8/angular.js"></script>
+    <script type="text/javascript" src="/js/lib/angular-1.5.8/angular-animate.js"></script>
+    <script type="text/javascript" src="/js/lib/angular-1.5.8/angular-touch.js"></script>
+    <script type="text/javascript" src="/js/lib/angular-1.5.8/angular-route.js"></script>
+    <script type="text/javascript" src="/js/lib/angular-1.5.8/angular-cookies.js"></script>
+    <script type="text/javascript" src="/js/lib/angular-1.5.8/angular-resource.js"></script>
+
+    <!-- bootstrap for angular js -->
+    <!--script type="text/javascript" src="js/lib/ui-bootstrap-tpls-2.2.0.min.js"></script-->
+    <script type="text/javascript" src="/js/lib/bootstrap-3.3.7/js/bootstrap.js"></script>
+
+    <!-- myapp js -->
+    <script type="text/javascript" src="/js/app/app.module.js"></script>
+    <script type="text/javascript" src="/js/app/app.config.js"></script>
+
+    <!-- service js -->
+    <script src="/js/app/core/core.module.js"></script>
+    <script src="/js/app/core/auth/auth.module.js"></script>
+    <script src="/js/app/core/auth/auth.service.js"></script>
+    <script src="/js/app/core/game/game.module.js"></script>
+    <script src="/js/app/core/game/game.service.js"></script>
+
+    <!-- view js -->
+    <script type="text/javascript" src="/js/app/view/top-Menu/top-Menu.module.js"></script>
+    <script type="text/javascript" src="/js/app/view/top-Menu/top-Menu.component.js"></script>
+
+    <script type="text/javascript" src="/js/app/view/login-page/login-page.modules.js"></script>
+    <script type="text/javascript" src="/js/app/view/login-page/login-page.component.js"></script>
+
+    <script type="text/javascript" src="/js/app/view/register-page/register-page.modules.js"></script>
+    <script type="text/javascript" src="/js/app/view/register-page/register-page.component.js"></script>
+
+    <script type="text/javascript" src="/js/app/view/header-page/header-page.modules.js"></script>
+    <script type="text/javascript" src="/js/app/view/header-page/header-page.component.js"></script>
+
+    <script type="text/javascript" src="/js/app/view/home-page/home-page.modules.js"></script>
+    <script type="text/javascript" src="/js/app/view/home-page/home-page.component.js"></script>
+
+    <script type="text/javascript" src="/js/app/view/mygame-page/mygame-page.modules.js"></script>
+    <script type="text/javascript" src="/js/app/view/mygame-page/mygame-page.component.js"></script>
+
+    <script type="text/javascript" src="/js/app/view/handgame-page/handgame-page.modules.js"></script>
+    <script type="text/javascript" src="/js/app/view/handgame-page/handgame-page.component.js"></script>
+
+    <script type="text/javascript" src="/js/app/view/shop-page/shop-page.modules.js"></script>
+    <script type="text/javascript" src="/js/app/view/shop-page/shop-page.component.js"></script>
+
+    <script type="text/javascript" src="/js/app/view/spongame-page/spongame-page.modules.js"></script>
+    <script type="text/javascript" src="/js/app/view/spongame-page/spongame-page.component.js"></script>
+
+    <script type="text/javascript" src="/js/app/view/profile-page/profile-page.module.js"></script>
+    <script type="text/javascript" src="/js/app/view/profile-page/profile-page.component.js"></script>
+
+    <script type="text/javascript" src="/js/app/view/indianholdem-page/indianholdem-page.modules.js"></script>
+    <script type="text/javascript" src="/js/app/view/indianholdem-page/indianholdem-page.component.js"></script>
+
+    <script type="text/javascript" src="/js/app/view/qholdem-page/qholdem-page.modules.js"></script>
+    <script type="text/javascript" src="/js/app/view/qholdem-page/qholdem-page.component.js"></script>
+
+    <script type="text/javascript" src="/js/app/view/blackjack-page/blackjack-page.modules.js"></script>
+    <script type="text/javascript" src="/js/app/view/blackjack-page/blackjack-page.component.js"></script>
+
+    <script src="http://connect.facebook.net/@Model.langcode/all.js"></script>
+    </head>
+
+<body>
+    <!--div id="fb-root"></div-->
+    <div id="view_root" ng-view></div>
+
+</body>
+</div>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.webnori.game"
+        versionCode = "10"
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Webnori WebGame</name>
+
+    <description>
+        WebnoriWebgame.
+    </description>
+
+    <author href="https://build.phonegap.com" email="psmon@live.co.kr">
+        psmon
+    </author>
+
+    <access origin="http://webnori.com" subdomains="true" />
+    <!-- all platforms -->
+    <preference name="phonegap-version" value="cli-6.0.0" />
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="true" />
+
+    <!-- iOS only -->
+    <preference name="target-device" value="universal" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="true" />
+    <preference name="deployment-target" value="7.0" />
+
+    <!-- Android only -->
+    <preference name="android-build-tool" value="ant|gradle" />
+    <preference name="android-minSdkVersion" value="10" />
+    <preference name="android-maxSdkVersion" value="15" />
+    <preference name="android-targetSdkVersion" value="12" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+
+
+</widget>

@@ -1,0 +1,11 @@
+﻿USE webnori;
+DROP TRIGGER IF EXISTS tr_createUserAfter;
+DELIMITER //
+CREATE TRIGGER tr_createUserAfter
+  AFTER INSERT
+  ON tblmember
+  FOR EACH ROW
+BEGIN
+  INSERT INTO tblbankinfo VALUES(NEW.memberID,10000,20,0,0,0,0);
+END //
+DELIMITER;

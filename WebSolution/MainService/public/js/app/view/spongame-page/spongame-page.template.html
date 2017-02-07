@@ -1,0 +1,11 @@
+<div class="topempty"></div>
+<div class="col-md-6">
+    <div class="alert alert-danger" role="alert" ng-if="bonusData.bonusPoint>0"> {{lang.dic.adbonus}}(+{{bonusData.bonusPoint}}Point)  </div>
+    <div class="thumbnail" ng-repeat="adver in adverList" ng-init="htmlContent = safeHtml(adver.content)">
+        <img id="adverimg_l" ng-src={{adver.mainimageurl}} alt="...">
+        <div class="caption">
+            <h3>{{adver.title}}</h3>
+            <div ng-bind-html="htmlContent"></div>
+        </div>
+    </div>
+</div>

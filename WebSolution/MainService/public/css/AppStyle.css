@@ -1,0 +1,222 @@
+﻿
+#view_root{
+
+}
+
+#view_top{
+    position: fixed;
+    top:0px;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+}
+
+#view_content{
+    z-index: 10;
+}
+
+#gamehandicon-small{
+    width: 35px;
+    height: 35px;
+    float: left;
+    margin: 2px;
+}
+
+#gamehandicon{
+    width: 50px;
+    height: 50px;
+}
+
+#gameCardIcon{
+    width: 50px;
+    height: 70px;
+}
+
+#gameCardIcon2{
+    width: 50px;
+    height: 70px;
+    padding-left: 5px;
+}
+
+#gameCardIcon3{
+    width: 50px;
+    height: 70px;
+    margin-left: -30px;
+    transform: rotate(10deg);
+}
+
+#gameCardIcon4{
+    width: 50px;
+    height: 70px;
+    margin-left: -30px;
+}
+
+
+#gamehandicon-big{
+    width: 100px;
+    height: 100px;
+}
+
+#gamehandicon-big2{
+    width: 200px;
+    height: 200px;
+}
+
+#adverimg_l{
+    width: 400px;
+    height: 340px;
+}
+
+#adverimg_m{
+    width: 200px;
+    height: 200px;
+}
+
+#adverimg_s{
+    width: 200px;
+    height: 200px;
+}
+
+#layoutleft{
+    float: left;
+}
+
+#popup-container {
+    width: 100%;
+    height: 570px;
+    top: 0px;
+    position: absolute;
+    z-index: 1000;
+    background-color: rgba(137,170,127,1); /* complimenting your modal colors */
+}
+#popup-container:target {
+    visibility: visible;
+    display: block;
+}
+
+#combobtn{
+    height: 60px;
+    vertical-align: middle;
+}
+
+#listitem_mid{
+}
+
+#fixverticalmiddle{
+    vertical-align: middle;
+    display: table-cell;
+    height: 60px;
+}
+
+
+#centerfix{
+    display: table; margin-left: auto; margin-right: auto;
+}
+
+#footfix{
+    position:absolute; bottom:0px; margin-bottom: -50px;  left: 50%; transform: translateX(-50%); width:200px;
+}
+
+#footfix2{
+    position:absolute; bottom:0px; margin-bottom: 0px;  left: 50%; transform: translateX(-50%); width:200px;
+}
+
+#share-link{
+    font-size: 20px;
+    color: red;
+}
+
+#backlogo{
+    background-image: url('/img/widelogo.jpg');
+    background-size: auto;
+    width: 300px;
+}
+
+.reveal-modal {
+    position: relative;
+    margin: 0 auto;
+    top: 0%;
+}
+
+.user_medal{
+    width: 100px;
+    height: 100px;
+}
+
+.user_medal_small{
+    width: 50px;
+    height: 50px;
+}
+
+.dropdown-menu{
+    left: -110px;
+    background-color: #93bc8c;
+}
+
+.disableui{
+    visibility: hidden;
+}
+
+.topempty{
+    height: 180px;
+}
+
+.topempty-game{
+    height: 50px;
+}
+
+.vlay{
+    clear: left;
+    overflow: hidden;
+}
+.centerTxt{
+    text-align: center;
+    width: 100px;
+}
+
+.wincircle {
+    width:20px;
+    height:20px;
+    border-radius:10px;
+    -moz-border-radius : 10px;
+    -webkit-border-radius : 10px;
+    -ms-border-radius :10px;
+    -khtml-border-radius : 10px;
+    -o-border-radius :10px;
+    background:#09F;
+    font:normal 12px/25px "나눔고딕", "돋움", "굴림";
+    color:#fff;
+    text-align:center;
+}
+
+
+.losecircle {
+    width:20px;
+    height:20px;
+    border-radius:10px;
+    -moz-border-radius : 10px;
+    -webkit-border-radius : 10px;
+    -ms-border-radius :10px;
+    -khtml-border-radius : 10px;
+    -o-border-radius :10px;
+    background: #ff4a36;
+    font:normal 12px/25px "나눔고딕", "돋움", "굴림";
+    color:#fff;
+    text-align:center;
+}
+
+.samecircle {
+    width:20px;
+    height:20px;
+    border-radius:10px;
+    -moz-border-radius : 10px;
+    -webkit-border-radius : 10px;
+    -ms-border-radius :10px;
+    -khtml-border-radius : 10px;
+    -o-border-radius :10px;
+    background: rgba(84, 113, 139, 0.89);
+    font:normal 12px/25px "나눔고딕", "돋움", "굴림";
+    color:#fff;
+    text-align:center;
+}
+

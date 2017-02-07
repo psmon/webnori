@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XPD:PROJECT xmlns:XPD="http://www.staruml.com" version="1">
+<XPD:HEADER>
+<XPD:SUBUNITS>
+</XPD:SUBUNITS>
+<XPD:PROFILES>
+<XPD:PROFILE>UMLStandard</XPD:PROFILE>
+</XPD:PROFILES>
+</XPD:HEADER>
+<XPD:BODY>
+<XPD:OBJ name="DocumentElement" type="UMLProject" guid="yWlPhjLvlEOztbj6aYNa3AAA">
+<XPD:ATTR name="Title" type="string">Webnori</XPD:ATTR>
+<XPD:ATTR name="Author" type="string">psmon</XPD:ATTR>
+<XPD:ATTR name="Company" type="string">psmon soft</XPD:ATTR>
+<XPD:ATTR name="Copyright" type="string">2016.11</XPD:ATTR>
+<XPD:ATTR name="#OwnedElements" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLPackage" guid="0sq0hsKNPkmltOtwW2BI5wAA">
+<XPD:ATTR name="Name" type="string">DB</XPD:ATTR>
+<XPD:REF name="Namespace">yWlPhjLvlEOztbj6aYNa3AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[1]" type="UMLPackage" guid="QPuYAIALqEiFYZj9m9fdUAAA">
+<XPD:ATTR name="Name" type="string">SYSTEM</XPD:ATTR>
+<XPD:REF name="Namespace">yWlPhjLvlEOztbj6aYNa3AAA</XPD:REF>
+<XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedDiagrams[0]" type="UMLDeploymentDiagram" guid="vTsExwyFQ0qsbFHMtw2SxAAA">
+<XPD:ATTR name="Name" type="string">WEBNORI_DEPOLY</XPD:ATTR>
+<XPD:REF name="DiagramOwner">QPuYAIALqEiFYZj9m9fdUAAA</XPD:REF>
+<XPD:OBJ name="DiagramView" type="UMLDeploymentDiagramView" guid="z00Iq+NE6EefXhPpCFo0AQAA">
+<XPD:REF name="Diagram">vTsExwyFQ0qsbFHMtw2SxAAA</XPD:REF>
+<XPD:ATTR name="#OwnedViews" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="OwnedViews[0]" type="UMLPackageView" guid="5bzhFC82pUWFOj9/bTy4ngAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">60</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">60</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">221</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">137</XPD:ATTR>
+<XPD:REF name="Model">gUBcMHqeaEWT9l8+TWyjzAAA</XPD:REF>
+<XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="4ug6v8EsBEWzsmFULZlEpQAA">
+<XPD:OBJ name="NameLabel" type="LabelView" guid="EpRbtWMS7kmrNWXaiY9jHgAA">
+<XPD:ATTR name="Text" type="string">VLA_BOX</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="LabelView" guid="Nd5ZL5gsYU6dwB8MbjVz5QAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="LabelView" guid="7rpPxvqwe06TaSTnm8pkJQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[1]" type="UMLPackageView" guid="h9BTFIbprUWwuntQvfjR/wAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">368</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">76</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">185</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">133</XPD:ATTR>
+<XPD:REF name="Model">RUgveo0B/k+juS2DEOIkjwAA</XPD:REF>
+<XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="CJVeK6Lupk22E3jGEOLDNwAA">
+<XPD:OBJ name="NameLabel" type="LabelView" guid="NyMar34Ksk21sx0Wr1peawAA">
+<XPD:ATTR name="Text" type="string">VLB_BOX</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="LabelView" guid="aTYP6DDD00iWtEEe4nt3vwAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="LabelView" guid="NbcoYkNTtkGbfYv2ARiuFgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[2]" type="UMLTextView" guid="GMtUSA8Pj06eVW49D9FPKAAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">812</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">40</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">165</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">97</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">VLA_INFO
+45.32.29.56(10.99.0.10)
+
+VLB_INFO
+45.32.14.248(10.99.0.11)
+</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:ATTR name="#OwnedElements" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLPackage" guid="gUBcMHqeaEWT9l8+TWyjzAAA">
+<XPD:ATTR name="Name" type="string">VLA_BOX</XPD:ATTR>
+<XPD:REF name="Namespace">QPuYAIALqEiFYZj9m9fdUAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
+<XPD:REF name="Views[0]">5bzhFC82pUWFOj9/bTy4ngAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[1]" type="UMLPackage" guid="RUgveo0B/k+juS2DEOIkjwAA">
+<XPD:ATTR name="Name" type="string">VLB_BOX</XPD:ATTR>
+<XPD:REF name="Namespace">QPuYAIALqEiFYZj9m9fdUAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
+<XPD:REF name="Views[0]">h9BTFIbprUWwuntQvfjR/wAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:BODY>
+</XPD:PROJECT>

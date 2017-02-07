@@ -1,0 +1,20 @@
+﻿CREATE TABLE `tblhandgamelist` (
+  `gameID` int(11) NOT NULL AUTO_INCREMENT,
+  `mainType` int(11) NOT NULL,
+  `gameType` int(11) NOT NULL,
+  `authType` int(11) NOT NULL,
+  `gameState` int(11) NOT NULL,
+  `gameTitle` varchar(200) NOT NULL,
+  `memberID_left` int(11) NOT NULL,
+  `memberNick_left` varchar(20) NOT NULL,
+  `gameMemo_left` varchar(200) NOT NULL,
+  `gameToken` varchar(45) NOT NULL,
+  `gameCount` int(11) NOT NULL,
+  `curGameIdx` int(11) NOT NULL,
+  `gameMoneyAmount` int(11) NOT NULL,
+  `lockPoint` int(11) NOT NULL,
+  `gameFlag_left1` varchar(45) NOT NULL,
+  `createtime` int(11) NOT NULL,
+  `endtime` int(11) NOT NULL,
+  PRIMARY KEY (`gameID`)
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;

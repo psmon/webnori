@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ProjectManager>
+  <Item Type="Folder" Caption="My Project">
+    <Item Type="FolderItem" FolderItemType="Standard" Caption="sp">
+      <Item Type="File" Value="C:\project\webapp\webnori\src\DB\sp\sp_creatuser.sql" Caption="sp_creatuser.sql" />
+    </Item>
+    <Item Type="FolderItem" FolderItemType="Standard" Caption="test">
+      <Item Type="File" Value="C:\project\webapp\webnori\src\DB\test\test.sql" Caption="test.sql" />
+    </Item>
+  </Item>
+</ProjectManager>

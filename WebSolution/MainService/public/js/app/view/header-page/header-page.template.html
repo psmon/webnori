@@ -1,0 +1,34 @@
+<div class="container-fluid" ng-if="isShowPage">
+<div class="row" ng-if="userInfo">
+    <div class="col-xs-4">
+        <div class="col">
+            <img  class="user_medal" ng-src={{userInfo.picUrl}} />
+            <div class="row-xs1"><p class="centerTxt">{{userInfo.nick}}</p></div>
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <div class="col">
+            <div class="row-xs1">Coins:{{userInfo.coinCount}}</div>
+            <div class="row-xs1">Point:{{userInfo.gamePoint}}</div>
+            <div class="row-xs1">{{lang.dic.statistics}}:{{userInfo.winCount}}-{{lang.dic_s.win}} {{userInfo.loseCount}}-{{lang.dic_s.lose}}</div>
+            <div class="row-xs1">WPoint:{{userInfo.monthPoint}}</div>
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <div class="text-right">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-menu-hamburger" ></span>
+                </button>
+                <ul class="dropdown-menu" ng-if="isLogin">
+                    <li id="listitem_mid"><a  id="combobtn" ng-click="onProfile()"><p id="fixverticalmiddle">{{lang.dic.changeAvatar}}</p></a></li>
+                    <li role="separator" class="divider"></li>
+                    <li id="listitem_mid"><a  id="combobtn" ng-click="onLogout()" ><p id="fixverticalmiddle">{{lang.dic.logout}}</p></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<profile-page ng-if="showProfile"></profile-page>

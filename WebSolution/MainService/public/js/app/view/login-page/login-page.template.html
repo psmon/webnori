@@ -1,0 +1,41 @@
+
+<div class="panel panel-success">
+    <div class="panel-heading">{{lang.login.intro1}}</div>
+    <div class="panel-body">
+        <p>{{lang.login.intro2}}</p>
+        <p>{{lang.login.intro3}}</p>
+    </div>
+</div>
+
+<div class="col-md-6 col-md-offset-3">
+    <h2>{{lang.dic.login}}</h2>
+    <form name="form"  role="form">
+    <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{lang.dic.email}}</span>
+            <input  name="email" type="text" class="form-control" placeholder="yourAccount@daum.net" aria-describedby="basic-addon1" ng-model="email" required/>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">{{lang.dic.password}}</span>
+            <input  name="password" type="password" class="form-control" placeholder="your password" aria-describedby="basic-addon1" ng-model="password" required/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-actions">
+            <!--button type="button" class="btn btn-primary" ng-click="onTestLogin()">데모 로그인</button-->
+            <button type="button" ng-disabled="dataLoading" class="btn btn-primary" ng-click="onLogin()">{{lang.login.trylogin}}</button>
+            <img  ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <button type="button" class="btn btn-primary" ng-click="onFBLogin()">{{lang.login.facebooklogin}}</button>
+            <a href="#!Register" class="btn btn-link">{{lang.login.register}}</a>
+        </div>
+    </div>
+    </form>
+    <div class="alert alert-danger" role="alert" ng-if="visibility"> {{$ctrl.errmsg}} </div>
+    <div class="alert alert-success" role="alert" ng-if="infoMessage">{{infoMessage}}</div>
+    <div class="alert alert-success" role="alert" >{{lang.login.pagememo}}</div>
+</div>
+<img class="img-rounded" width="{{windowWidth}}px" src="/img/widelogo.jpg" />

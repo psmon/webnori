@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta property="og:url" content="@Model.pageUrl" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@Model.pageTitle" />
+    <meta property="og:description" content="@Model.pageContent" />
+    <meta property="og:image" content="@Model.pageImg" />
+    <meta property="fb:app_id" content="@Model.appid" />
+
+
+    <title>@Model.pageTitle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/js/lib/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="/js/lib/bootstrap-3.3.7/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/Event.css">
+    <script type="text/javascript" src="/js/lib/jquerymobi/jquery.js"></script>
+</head>
+
+
+<body ng-app="myapp">
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your share button code -->
+    <!--div class="fb-share-button" data-href="@Model.pageUrl" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="@Model.popupurl">공유하기</a></!--div -->
+    <div style="margin-top:30px"></div>
+    <div class="fb-like" data-href="@Model.pageUrl" data-layout="standard" data-action="like" data-width="300" data-size="large" data-show-faces="true" data-share="true"></div>    
+
+    <div id="main">
+        <img alt="" src="/img/event/1/main.jpg" style="width: 100%;">
+    
+        <div class="panel panel-primary">
+            <div class="panel-heading">이벤트 참여 방법</div>
+            <div class="panel-body">                                
+                <h5><b>참가대상:</b> 창원인근 지역 주민이거나 연고가 있는분으로 본 행사의 후원자인 네이쳐 아쿠아 리움에서 직접 상품 수령 가능한자(온라인 배송 불가,대리수령 가능)</h5>
+                <h5><b>이벤트기간:</b>2017.01.19~2017.01.30</h5>
+                <h5><b>참가방법:</b> <a href="http://game.webnori.com" target="_blank">웹노리(game.webnori.com)</a> 에 가입후 가위바위보/인디언홀덤의 게임진행</h5>
+                <h5><b>순위:</b>이벤트기간 까지 각게임에서 획득한 포인트가 많은 사용자를 측정합니다. 랭크는 사이트에서 실시간 확인 가능합니다.</h5>
+                <img src="/img/event/1/rank.png" >                
+                <h5><b>가위바위보왕 순위 1위 :</b> 5만원 신세계 상품권</h5>
+                <h5><b>인디언 홀덤 순위 1위 :</b> 5만원 신세계 상품권</h5>
+                
+                <h5><b>당첨 발표 :</b> 2017년 1월 31일, <a href="https://www.facebook.com/webnorigame/" target="_blank">웹노리 커뮤니티(https://www.facebook.com/webnorigame)</a></h5> 
+                <h5>
+                    <b>수령 방법 :</b> 각 1위는 가입시사용된 메일로 혹은 페이스북 메시지로 우승자에게 상품수령 암구어가 공지가 가며,
+                    네이처 아쿠아 리움에서 메일을 폰카메라로 찍어 제시하면 직접수령 가능합니다. ( 주소: 경상남도 창원시 의창구 명지로 103 )
+                </h5>
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">가위바위보 게임 설명</div>
+            <div class="panel-body">
+                <img alt="" src="/img/event/1/sub1.jpg" style="width: 100%;">
+                <h5>설명: 가위바위보게임은 누구나 알고있는 33.3333 승률을 가진 설명이 필요없는 가장 완벽한 밸런스 있는 게임입니다.                    
+                </h5>
+                <h5>게시자: 게시자는 게임->가위바위보게임->게임생성 에서 자신의 포인트를 걸고 새로운 게임을 만들수 있으며 묵/찌/빠 선택하여 게시하여, 도전자에게 이기면 포인트가 획득이됩니다.</h5>
+                <h5>도전자: 도전자는 게임->가위바위보게임->도전 에서 다른사람이 게시한 게임에 참여가 가능하며 묵/찌/빠로 게시자에게 도전가능합니다.</h5>
+                <h5>팁: 게시메시지및 도전메시지를 변경하여 게임에 영향을 줄수 있습니다. 예를 들면 '사나이는묵'이란 게시를하고 찌를 선택하거나 다른 패를 선택 하여 도전자에게 혼란을 유발할수 있습니다. 
+                또한 도전자는 '찌로 도전함' 이란 도전 메시지를 입력하여,실제는 빠를 내어 다음 사용자에게 혼란을 줄수 있습니다. 게시된 게임 하나가 모두 완료되면 묵찌빠 결과가 모두 표시가됩니다.  </h5>
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">인디언 홀덤 게임설명</div>
+            <div class="panel-body">
+                <img alt="" src="/img/event/1/sub2.jpg" style="width: 100%;">
+                <h5>설명: 인디언 홀덤은 자신의 카드는 알지 못하며 , 이마에 붙은 상대편의 카드만 보고, 공통카드 2장과  자신의 카드 1장 조합으로 누가더 높은 카드가
+                될지를 겨루는 승부입니다. 
+                </h5>
+                <h5>게시자: 게시자는 게임->인디언홀덤->게임생성 에서 자신의 포인트를 걸고 새로운 게임을 만들수 있습니다. 게시자는 자신의 카드만 볼수 있으며, 도전자에게 이기면 포인트가 획득이됩니다. </h5>
+                <h5>도전자: 도전자는 게임->인디언홀덤->도전 에서 다른사람이 게시한 게임에 참여가 가능하며 도전자는 상대편카드를 볼수 있으며, 이길지 질지를 결정하여 승패를 반전시킬수 있습니다. </h5>
+                <h5>팁: 도전자는 게시자의 카드가 더 유리하다고 판단될시 , Fold 를 선택하여 게임결과 반전이 가능합니다. (자신의 카드가 이길시->패, 자신의 카드가 질때->승 )</h5>
+            </div>
+        </div>
+              
+    </div>
+
+</body>
+</html>

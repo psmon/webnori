@@ -1,0 +1,14 @@
+<div class="topempty"></div>
+<div class="row">
+    <div class="col-md-6" ng-repeat="gameinfo in gameList">
+        <div class="thumbnail">
+            <img id="gamehandicon-big" ng-src={{gameinfo.img}} alt="...">
+            <div class="caption">
+                <h3>{{gameinfo.title}}</h3>
+                <p>{{gameinfo.comment}}</p>
+                <p><button  type="button" class="btn btn-primary" ng-click="OpenGame(gameinfo.url)">{{gameinfo.btntitle}}</button></p>
+            </div>
+        </div>
+    </div>
+</div>
+

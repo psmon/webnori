@@ -1,0 +1,205 @@
+<div class="topempty-game"></div>
+<div ng-if="isLogin==false" class="alert alert-success" role="alert" >
+    <p>소셜 홀덤 핸드게임</p>
+    <p>{{lang.sIndianHGame.gamehow1}}</p>
+
+    <p>{{lang.sIndianHGame.gamehow3}}</p>
+</div>
+
+<script type="text/ng-template"  id="tree_item_renderer_indianholdemplaygame.html">
+    <div class="panel-heading" ng-if="data.header" ng-init="userCardInfo=GetUserCardInfo(data.header.gameData)">
+        <span class="glyphicon glyphicon glyphicon-user" ></span>
+        [{{data.header.gameID}}] {{data.header.creatorNick}} {{lang.QHoldemGame.title}}:<strong>{{data.header.gameMoneyAmount}}</strong> {{lang.commGame.totalGame}}:{{data.header.gameCount}}
+        <div><img id="gamehandicon" ng-src={{data.header.creatorAvatar}} /><strong>{{lang.commGame.writemsg}}:{{data.header.gameTitle}}</strong></div>
+        <div>
+            <div >
+                <img id="gameCardIcon" ng-src="/img/carddeck/images/{{userCardInfo.L0}}.png" />
+                <img id="gameCardIcon3" ng-src="/img/carddeck/images/{{userCardInfo.L1}}.png" />
+                VS
+                <img id="gameCardIcon" ng-src="/img/carddeck/images/{{userCardInfo.R0}}.png" />
+                <img id="gameCardIcon3" ng-src="/img/carddeck/images/{{userCardInfo.R1}}.png" />
+            </div>
+            <div id="layoutleft">
+            </div>
+        </div>
+        <div ng-if="doneGame == false">
+        <button ng-if="data.header.gameState == 0" type="button" class="btn btn-primary" ng-click="JoinGame(data.header)">{{lang.dic.req}}</button>
+        </div>
+
+    </div>
+    <div ng-if="data.gameID">
+        <div>
+            <img id="gamehandicon" ng-src={{data.joinerAvatar}} ng-init="comCards=GetComCardInfo(data.commCardData);actionName=GetActionName(data.joinerGameData)" />
+            <div style="display: inline;">
+                {{data.joinerNick}}
+            </div>
+            <div style="border: 1px solid red;border-radius: 5px;width: 250px;margin-left: 60px;padding: 10px;">
+                <div ng-if="data.joinerID==data.winnerID" class="wincircle" >
+                    {{lang.dic_s.win}}
+                </div>
+
+                <div ng-if="data.creatorID==data.winnerID" class="losecircle" >
+                    {{lang.dic_s.lose}}
+                </div>
+
+                <div ng-if="data.winnerID==0" class="samecircle" >
+                    {{lang.dic_s.nowin}}
+                </div>
+
+                <div >
+                    {{data.joinerMemo}}
+                </div>
+                <div>
+                    <div >
+                        <img id="gameCardIcon" ng-src="/img/carddeck/images/{{comCards[0]}}.png" />
+                        <img id="gameCardIcon4" ng-src="/img/carddeck/images/{{comCards[1]}}.png" />
+                        <img id="gameCardIcon4" ng-src="/img/carddeck/images/{{comCards[2]}}.png" />
+                        <img id="gameCardIcon4" ng-src="/img/carddeck/images/{{comCards[3]}}.png" />
+                        <img id="gameCardIcon4" ng-src="/img/carddeck/images/{{comCards[4]}}.png" />
+                    </div>
+                </div>
+
+                <div ng-if="data.joinerID==data.winnerID">
+                    {{actionName}}(+{{data.earnPoint}}Point)
+                </div>
+
+                <div ng-if="data.creatorID==data.winnerID">
+                    {{actionName}}(-{{data.earnPoint}}Point)
+                </div>
+                <div>
+                    CardA:{{data.creatorHandStr}}
+                </div>
+                <div>
+                    CardB:{{data.joinerHandStr}}
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <!--div><button ng-if="data.isJoinGame" type="button" class="btn btn-primary" ng-click="JoinGame(data.gameID)">도전</button></div-->
+    <div class="panel-body"  ng-repeat="data in data.list" ng-include="'tree_item_renderer_indianholdemplaygame.html'"></div>
+</script>
+
+
+
+
+<div class="panel panel-info">
+    <div class="panel-heading" >
+        {{lang.indianHGame.gamehow1}}
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-info" ng-repeat="data in $ctrl.PlayGameList" ng-include="'tree_item_renderer_indianholdemplaygame.html'">{{data.header.gameID}}</div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading" >
+        {{lang.indianHGame.gamehow2}}
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-default" ng-repeat="data in $ctrl.PlayCompleteList" ng-include="'tree_item_renderer_indianholdemplaygame.html'">{{data.header.gameID}}</div>
+    </div>
+</div>
+
+<a href="/{{lang.langcode}}"><img class="img-rounded" width="{{windowWidth}}px" src="/img/widelogo.jpg" /></a>
+
+<div id="popup-container" ng-if="isShowDodal">
+    <div id="exampleModal" class="reveal-modal">
+        <div class="alert alert-danger" role="alert" ng-if="errorvisibility"> {{$ctrl.errmsg}} </div>
+        <div ng-switch="" on="dlgType">
+
+            <!-- JoinGame -->
+            <div ng-switch-when=2 ng-init="userCardInfo=GetUserCardInfo(preGameData.gameData)">
+                <div ng-if="resultShow==false" class="alert alert-success" role="alert" >
+                    <p>어떠한 핸드가 이길까요?</p>
+                </div>
+                <form name="form">
+                    <div class="form-group" >
+                        <div class="input-group">
+                            <label>
+                                <input type="radio" ng-model="rhand.name" value="0" checked="checked"/>
+                                <img id="gameCardIcon" ng-src="/img/carddeck/images/{{userCardInfo.L0}}.png" />
+                                <img id="gameCardIcon3" ng-src="/img/carddeck/images/{{userCardInfo.L1}}.png" />
+                            </label>
+                            <span style="margin-left: 20px">VS</span>
+                            <label>
+                                <input style="margin-left: 20px" type="radio" ng-model="rhand.name" value="1" >
+                                <img id="gameCardIcon" ng-src="/img/carddeck/images/{{userCardInfo.R0}}.png" />
+                                <img id="gameCardIcon3" ng-src="/img/carddeck/images/{{userCardInfo.R1}}.png" />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="float: left;margin-left: 33px;clear: both">CardA</div><div style="margin-left: 166px">Card B</div>
+
+                    <div class="form-group" ng-if="doneGame==false">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">{{lang.dic.nickname}}</span>
+                            <input name="joinernick" ng-model="joinernick" type="text" class="form-control" placeholder="{{lang.api.required}}" aria-describedby="basic-addon1"  required>
+                        </div>
+                    </div>
+
+                    <div class="form-group" >
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">{{lang.commGame.vsmsg}}</span>
+                            <input name='gamememo2' type="text" class="form-control" placeholder="{{lang.api.required}}" aria-describedby="basic-addon1" ng-model="gamememo2" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-if="doneGame==false">
+                        <div class="input-group">
+                            <label>
+                                <input type="radio" ng-model="joineravatar.name" value="/img/avatar/default/avartar_10.png" checked="checked"/>
+                                <img id="gamehandicon" src="/img/avatar/default/avartar_10.png"/>
+                            </label>
+                            <label>
+                                <input type="radio" ng-model="joineravatar.name" value="/img/avatar/default/avartar_34.png" >
+                                <img id="gamehandicon" src="/img/avatar/default/avartar_34.png"/>
+                            </label>
+                            <label>
+                                <input type="radio" ng-model="joineravatar.name" value="/img/avatar/default/avartar_47.png" />
+                                <img id="gamehandicon" src="/img/avatar/default/avartar_47.png"/>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="footfix">
+                        <button ng-disabled="form.$valid==false || dataLoading" type="button" class="btn btn-primary" ng-click="CloseDlg(this)">{{lang.dic.progressGame}}</button>
+                        <button type="button" class="btn btn-primary" ng-click="CancelDlg()">{{lang.dic.close}}</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div ng-if="resultShow" id="gameResult" ng-if="resultShow">
+                <div >
+                    <img id="gameCardIcon" ng-src="/img/carddeck/images/{{comCards[0]}}.png" />
+                    <img id="gameCardIcon4" ng-src="/img/carddeck/images/{{comCards[1]}}.png" />
+                    <img id="gameCardIcon4" ng-src="/img/carddeck/images/{{comCards[2]}}.png" />
+                    <img id="gameCardIcon4" ng-src="/img/carddeck/images/{{comCards[3]}}.png" />
+                    <img id="gameCardIcon4" ng-src="/img/carddeck/images/{{comCards[4]}}.png" />
+                </div>
+
+                <div class="alert alert-success" role="alert" >
+                    <p>CardA:{{result_left}}</p>
+                    <p>CardB:{{result_right}}</p>
+                </div>
+                <div class="alert alert-danger" role="alert" >{{resultMsg}}</div>
+            </div>
+
+        </div>
+
+        <img  ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+    </div>
+</div>
+
+
+
+
+
+
+

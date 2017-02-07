@@ -1,0 +1,52 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>{{lang.dic.newregi}}</h2>
+    <form name="form"  role="form">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{lang.register.regiinfo}}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">{{lang.dic.email}}</span>
+                    <input name='email' type="text" class="form-control" placeholder="{{lang.api.required}}" aria-describedby="basic-addon1" ng-model="email">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">{{lang.dic.password}}</span>
+                    <input name='password' type="password" class="form-control" placeholder="{{lang.api.required}}" aria-describedby="basic-addon1" ng-model="password">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">{{lang.dic.repassword}}</span>
+                    <input  name="password2" type="password" class="form-control" placeholder="your password" aria-describedby="basic-addon1" ng-model="password2"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">{{lang.dic.nickname}}</span>
+                    <input name='nickname' type="text" class="form-control" placeholder="{{lang.api.required}}" aria-describedby="basic-addon1" ng-model="nickname">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <button type="button" class="btn btn-primary" ng-click="onRegister()">{{lang.dic.register}}</button>
+        <a href="#!Login" class="btn btn-link">Cancel</a>
+    </div>
+    </form>
+    <div class="alert alert-danger" role="alert" ng-if="visibility"> {{$ctrl.errmsg}} </div>
+
+</div>
+
+
+
+
+

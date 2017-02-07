@@ -1,0 +1,24 @@
+﻿<div id="popup-container" >
+
+    <div class="alert alert-danger" role="alert" ng-if="errmsg"> {{errmsg}} </div>
+    <div class="col" id="centerfix">
+        <img id="gamehandicon"  class="user_medal" ng-src={{userInfo.picUrl}} />
+        <div class="row-xs1"><p style="text-align: center">{{userInfo.nick}}</p></div>
+    </div>
+
+    <div id="scrollcontent" ng-if="avatarList">
+        <div  ng-repeat="avatar in avatarList">
+            <img role="button" ng-click="OnSetAvarTar(avatar)" id="gamehandicon-small"  ng-src={{avatar.imgUrl}} />
+        </div>
+    </div>
+
+    <div style="clear: both">
+        <button type="button" class="btn btn-primary" ng-click="OnGetAvarList()">{{lang.dic.changeAvatar}}</button>
+    </div>
+    <button ng-if="avaibleUnjoin" type="button" class="btn btn-danger" ng-click="OnUnJoin()">{{lang.dic.unjoin}}</button>
+
+    <div id="footfix2">
+        <button type="button" class="btn btn-primary" ng-click="OnCloseProfile()" >{{lang.dic.close}}</button>
+    </div>
+
+</div>

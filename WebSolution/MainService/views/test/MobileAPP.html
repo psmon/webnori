@@ -1,0 +1,39 @@
+﻿@Master['test/MobileMaster.html']
+@Section['Content']
+
+<div data-role="page">
+    <div data-role="panel" id="mypanel">
+        <!-- panel content goes here -->
+    </div><!-- /panel -->
+    @Partial['test/MobileHeader.html', Model.Users];
+    <div data-role="tabs" id="tabs">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#currentGame" data-ajax="false">진행게임</a></li>
+                <li><a href="#newGame" data-ajax="false">새로운게임</a></li>
+                <li><a href="#leaderBoard" data-ajax="false">전적</a></li>
+                <li><a href="#itemShop" data-ajax="false">아이템숍</a></li>
+            </ul>
+        </div>
+        <div id="currentGame" class="ui-body-d ui-content">
+            @Partial['test/CurrentGame.html', Model.Users];
+        </div>
+        <div id="newGame" class="ui-body-d ui-content">
+            @Partial['test/NewGame.html', Model.Users];
+        </div>
+        <div id="leaderBoard" class="ui-body-d ui-content">
+            @Partial['test/LeaderBoard.html', Model.Users];
+        </div>
+        <div id="itemShop" class="ui-body-d ui-content">
+            @Partial['test/ItemShop.html', Model.Users];
+        </div>
+    </div>
+
+    <div data-role="footer">
+        <h2>Footer</h2>
+        <a href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-power">Quit</a>
+        <a href="#" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-right ui-btn-icon-right ui-icon-carat-r">Next</a>
+    </div>
+
+</div>
+    @EndSection

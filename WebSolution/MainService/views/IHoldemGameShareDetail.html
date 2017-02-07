@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta property="og:url" content="@Model.pageUrl" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@Model.pageTitle" />
+    <meta property="og:description" content="@Model.pageContent" />
+    <meta property="og:image" content="@Model.pageImg" />
+    <meta property="fb:app_id" content="@Model.appid" />
+
+
+    <title>@Model.pageTitle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/js/lib/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="/js/lib/bootstrap-3.3.7/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/AppStyle.css">
+    <script type="text/javascript" src="/js/lib/jquerymobi/jquery.js"></script>
+
+    <!-- LangFile -->
+    <script type="text/javascript" src="@Model.langfile"></script>
+
+
+    <!-- angular js -->
+    <script type="text/javascript" src="/js/lib/angular-1.5.8/angular.js"></script>
+    <script type="text/javascript" src="/js/lib/angular-1.5.8/angular-animate.js"></script>
+    <script type="text/javascript" src="/js/lib/angular-1.5.8/angular-touch.js"></script>
+    <script type="text/javascript" src="/js/lib/angular-1.5.8/angular-route.js"></script>
+    <script type="text/javascript" src="/js/lib/angular-1.5.8/angular-cookies.js"></script>
+    <script type="text/javascript" src="/js/lib/angular-1.5.8/angular-resource.js"></script>
+
+    <!-- bootstrap for angular js -->
+    <!--script type="text/javascript" src="js/lib/ui-bootstrap-tpls-2.2.0.min.js"></script-->
+    <script type="text/javascript" src="/js/lib/bootstrap-3.3.7/js/bootstrap.js"></script>
+
+
+    <!-- service js -->
+    <script src="/js/app/core/core.module.js"></script>
+    <script src="/js/app/core/auth/auth.module.js"></script>
+    <script src="/js/app/core/auth/auth.service.js"></script>
+    <script src="/js/app/core/game/game.module.js"></script>
+    <script src="/js/app/core/game/game.service.js"></script>
+
+    <script type="text/javascript">
+        g_gameId = Number(@Model.pageID);
+        var app = angular.module('myapp', [
+            'ngRoute',
+            'ngCookies',
+            'ngResource',
+            'core',
+            'core.auth',
+            'core.game',
+            'publiciholdemPage'
+        ]);
+
+    </script>
+
+    <!-- view js -->
+    <script type="text/javascript" src="/js/app/serverview/publiciholdemgamedetail-page/publiciholdemgamedetail-page.modules.js"></script>
+    <script type="text/javascript" src="/js/app/serverview/publiciholdemgamedetail-page/publiciholdemgamedetail-page.component.js"></script>
+
+</head>
+
+
+<body ng-app="myapp">
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/@Model.langcode/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your share button code -->
+    <!--div class="fb-share-button" data-href="@Model.pageUrl" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="@Model.popupurl">공유하기</a></!--div -->
+    <div style="margin-top:30px"></div>
+    <div class="fb-like" data-href="@Model.pageUrl" data-layout="standard" data-action="like" data-width="300"  data-size="large" data-show-faces="true" data-share="true"></div>
+    <div id="view_content"><publiciholdem-page></publiciholdem-page></div>
+</body>
+</html>
