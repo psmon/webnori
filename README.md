@@ -51,3 +51,10 @@ Clinet:Angular JS
   
 # 소셜게임모드
   모든게임은 가입자간 경쟁을 벌이는게임외에, 소셜링크를 통해 비가입유져와도 게임가능합니다.
+  
+* [가위바위보](http://game.webnori.com/PublicDetail/96/ko_KR)
+* [인디언홀덤](http://game.webnori.com/PublicIholdemDetail/49/ko_KR)
+* [홀덤 핸드게임](http://game.webnori.com/PublicQHoldemDetail/32/ko_KR)
+
+  
+  
